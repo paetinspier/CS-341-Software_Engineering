@@ -19,6 +19,7 @@ public class Main {
 	private JButton btnEnter;
 	private JTextArea textArea;
 
+	
 	/**
 	 * Launch the application.
 	 */
