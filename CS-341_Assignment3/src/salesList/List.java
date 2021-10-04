@@ -7,6 +7,7 @@ public class List {
 	private Item tail;
 	private Double sum = 0.0;
 	private String list = "";
+	private Integer total = 0;
 	
 	// constructor 
 	
@@ -29,9 +30,11 @@ public class List {
 		// create an item to add to the list
 		Item temp = new Item(p, q, n);
 		
-		sum += p * q;
+		total += q;
 		
-		list += n + "\t" + "$" + p.toString() + "\t" + q.toString() + "\n";
+		sum += p * q; // this adds the price of the item to the total price of the list
+		
+		list += n + "\t" + "$" + p.toString() + "\t" + q.toString() + "\n"; // this adds all the details about the item to the list
 		
 		if (isEmpty()) {
 			head = temp;
@@ -65,6 +68,9 @@ public class List {
 		return list;
 	}
 	
+	public Integer getQuantity() {
+		return total;
+	}
 	
 
 	

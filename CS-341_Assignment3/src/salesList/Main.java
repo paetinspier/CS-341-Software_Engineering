@@ -24,6 +24,8 @@ public class Main {
 	private JButton btnAdd;
 	private JTextArea textListArea;
 	private JTextArea textTotal;
+	private JTextArea textArea;
+	private JLabel lblNewLabel_5;
 
 	/**
 	 * Launch the application.
@@ -60,6 +62,8 @@ public class Main {
 				textListArea.setText(list.printList());
 				
 				textTotal.setText("$" + list.getSum().toString());
+				
+				textArea.setText(list.getQuantity().toString());
 				
 				textPrice.setText("");
 				textQuantity.setText("");
@@ -126,7 +130,15 @@ public class Main {
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Total Sales:");
-		lblNewLabel_4.setBounds(205, 250, 86, 16);
+		lblNewLabel_4.setBounds(230, 250, 74, 16);
 		frame.getContentPane().add(lblNewLabel_4);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(104, 238, 114, 28);
+		frame.getContentPane().add(textArea);
+		
+		lblNewLabel_5 = new JLabel("Total Items:");
+		lblNewLabel_5.setBounds(6, 250, 87, 16);
+		frame.getContentPane().add(lblNewLabel_5);
 	}
 }
