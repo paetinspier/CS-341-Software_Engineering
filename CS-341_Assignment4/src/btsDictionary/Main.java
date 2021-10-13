@@ -29,7 +29,7 @@ public class Main {
 		myTree.inOrderTreeSearch(myTree.getRoot());
 		
 		
-		System.out.println(myTree.spellCheck("face"));
+		System.out.println(myTree.spellCheck("eight"));
 		
 	}
 

@@ -94,13 +94,18 @@ public class Tree {
 				temp = temp.getRightKid();
 			}
 		}
-		
-		if (temp.getKey() == search){
-			return true;
-		}
-		else {
+		if(temp == null) {
 			return false;
 		}
+		else {
+			if (temp.getKey() == search){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
 	}
 	
 	public static Word getMinWord(Word curr) {
