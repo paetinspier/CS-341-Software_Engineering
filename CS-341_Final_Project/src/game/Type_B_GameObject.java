@@ -23,6 +23,7 @@ public class Type_B_GameObject extends GameObject implements Type_B_GameObject_a
 		imageList.add(new ImageIcon("images/Type_B_Left.png"));
 		imageList.add(new ImageIcon("images/Type_B_Right.png"));
 	}
+	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
