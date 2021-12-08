@@ -24,7 +24,7 @@ public class MyMain {
 		canvas.addKeyListener(d);
 		canvas.addGameObject(d);
 		
-		Type_B_GameObject b = new Type_B_GameObject(c);
+		Type_B_GameObject b = new Type_B_GameObject(d);
 		
 		canvas.addKeyListener(b);
 		canvas.addGameObject(b);
