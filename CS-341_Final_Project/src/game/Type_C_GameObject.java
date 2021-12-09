@@ -13,7 +13,7 @@ public class Type_C_GameObject extends GameObject implements KeyListener {
 
 	public Type_C_GameObject(int x, int y) {
 		super(x, y);
-		setVelocity(5);
+		
 
 		imageList = new LinkedList<Icon>();
 		imageList.add(new ImageIcon("images/Type_C_Left.png"));

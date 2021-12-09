@@ -14,8 +14,7 @@ public class Type_B_GameObject extends GameObject implements Type_B_GameObject_a
 	public Type_B_GameObject(GameObject go) {
 		super(go.getX(), go.getY());
 		game_object = go;
-		setDirection(Direction.NONE);
-		setVelocity(5);
+		
 
 		imageList = new LinkedList<Icon>();
 		imageList.add(new ImageIcon("images/Type_B__Up.png"));
@@ -65,14 +64,15 @@ public class Type_B_GameObject extends GameObject implements Type_B_GameObject_a
 	@Override
 	public void move(Canvas c) {
 		// TODO Auto-generated method stub
-
+		
 		Icon icon = getCurrentImage();
 
 		int iconHeight = icon.getIconHeight();
 		int iconWidth = icon.getIconWidth();
 		int canvasHeight = (int) c.getSize().getHeight();
 		int canvasWidth = (int) c.getSize().getWidth();
-
+		//System.out.println(getHighlight());
+		
 		if (getHighlight() == true) {
 			switch (getDirection()) {
 			case Direction.UP:
@@ -105,34 +105,32 @@ public class Type_B_GameObject extends GameObject implements Type_B_GameObject_a
 				break;
 			}
 		} else {
-			
-			if (getDirection() == Direction.RIGHT) {
+			if (getDirection() == Direction.UP) {
+				setY(getY()- getVelocity());
+				if (getY() < 0 ) {
+					setY(0);
+					setDirection(Direction.LEFT);
+				}
+			}
+			else if(getDirection() == Direction.LEFT) {
 				setX(getX() + getVelocity());
-				if (getX() + iconWidth > canvasWidth) {
+				if (getX() + iconWidth>canvasWidth) {
 					setX((int) (canvasWidth - iconWidth));
 					setDirection(Direction.DOWN);
-					setImage();
 				}
-			} else if (getDirection() == Direction.DOWN) {
+			}
+			else if (getDirection() == Direction.DOWN) {
 				setY(getY() + getVelocity());
 				if (getY() + iconHeight > canvasHeight) {
 					setY((int) (canvasHeight - iconHeight));
-					setDirection(Direction.LEFT);
-					setImage();
+					setDirection(Direction.RIGHT);
 				}
-			} else if (getDirection() == Direction.LEFT) {
+			}
+			else {
 				setX(getX() - getVelocity());
 				if (getX() < 0) {
 					setX(0);
 					setDirection(Direction.UP);
-					setImage();
-				}
-			} else if (getDirection() == Direction.UP){
-				setY(getY() - getVelocity());
-				if (getY() < 0) {
-					setY(0);
-					setDirection(Direction.RIGHT);
-					setImage();
 				}
 			}
 		}

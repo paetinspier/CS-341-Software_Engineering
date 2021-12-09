@@ -1,5 +1,6 @@
 package game;
 
+
 import java.awt.Component;
 import java.awt.Graphics;
 import java.util.List;
@@ -29,6 +30,10 @@ public abstract class GameObject {
 	public void draw(Component c, Graphics g) {
 		imageList.get(currentImage).paintIcon(c, g, x, y);
 	}
+	
+
+	
+	
 
 	// SETTERS AND GETTERS
 

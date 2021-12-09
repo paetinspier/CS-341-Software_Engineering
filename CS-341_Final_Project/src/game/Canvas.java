@@ -4,11 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;
 import java.util.List;
+
+
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+
 import javax.swing.Timer;
 
 public class Canvas extends JComponent implements ActionListener, KeyListener {
@@ -50,8 +54,14 @@ public class Canvas extends JComponent implements ActionListener, KeyListener {
 		for (GameObject s : gameObjectList) {
 			s.draw(this, g);
 		}
+		GameObject s = gameObjectList.get(highlighted);
+		int x = s.getX();
+		int y = s.getY();
+		g.setColor(Color.RED);
+		g.drawRect(x, y, 158, 139);
 
 	}
+	
 
 	// ****************************************************
 	// Canvas must implement the inherited abstract method
@@ -94,5 +104,15 @@ public class Canvas extends JComponent implements ActionListener, KeyListener {
 	public int getHighlight() {
 		return highlighted;
 	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

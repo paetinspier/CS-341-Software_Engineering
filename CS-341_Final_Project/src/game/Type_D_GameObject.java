@@ -10,7 +10,7 @@ public class Type_D_GameObject extends GameObject implements KeyListener {
 
 	public Type_D_GameObject(int x, int y) {
 		super(x, y);
-		setDirection(Direction.NONE);
+		
 
 		imageList = new LinkedList<Icon>();
 		imageList.add(new ImageIcon("images/Type_D_Up.png"));
@@ -22,7 +22,6 @@ public class Type_D_GameObject extends GameObject implements KeyListener {
 
 	public void move(Canvas c) {
 		Icon icon = getCurrentImage();
-		setVelocity(5);
 		int iconHeight = icon.getIconHeight();
 		int iconWidth = icon.getIconWidth();
 		int canvasHeight = (int) c.getSize().getHeight();

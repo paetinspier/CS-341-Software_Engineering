@@ -1,18 +1,20 @@
 package game;
 
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 import java.util.LinkedList;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
 
 public class Type_A_GameObject extends GameObject implements KeyListener {
 
 	// constructor
 	public Type_A_GameObject(int x, int y) {
 		super(x, y);
-		setVelocity(5);
 
 		imageList = new LinkedList<Icon>();
 		imageList.add(new ImageIcon("images/Type_A_Up.png"));
@@ -24,11 +26,18 @@ public class Type_A_GameObject extends GameObject implements KeyListener {
 
 	public void move(Canvas c) {
 		Icon icon = getCurrentImage();
+		
+		
 
 		int iconHeight = icon.getIconHeight();
 		int canvasHeight = (int) c.getSize().getHeight();
+		
+		
+		
 
 		if (getHighlight() == true) {
+			
+			
 			// move the object
 			switch (getDirection()) {
 			case Direction.UP:
@@ -109,4 +118,6 @@ public class Type_A_GameObject extends GameObject implements KeyListener {
 		}
 
 	}
+	
+	
 }
