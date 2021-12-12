@@ -7,12 +7,12 @@ import java.util.LinkedList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Type_B_GameObject extends GameObject implements Type_B_GameObject_adaptor, KeyListener{
+public class Type_B_GameObject extends Type_B_GameObject_adaptor implements KeyListener{
 	
 	GameObject game_object;
 
 	public Type_B_GameObject(GameObject go) {
-		super(go.getX(), go.getY());
+		super(go);
 		game_object = go;
 		
 
